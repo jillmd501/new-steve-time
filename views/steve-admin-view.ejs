@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+    <link href="/css/application.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Poiret+One|Pacifico' rel='stylesheet' type='text/css'>
+
+
+    <title>Steve Time</title>
+  </head>
+
+<div class='container'>
+  <h5 class="center">
+      <a href="/polls/<%= id %>">Active Poll Link</a><p>☝ Give this to the pesky students!</p>
+  </h5>
+<div id="connection-count"></div>
+
+  <h1><%= poll.title %></h1>
+    <br>
+    <% for(var i=0; i < poll.options.length; i++){ %>
+      <tr>
+        <% if(poll.options[i] != ""){ %>
+          <td><button class="btn btn-primary btn-lg vote-button"> <%=poll.options[i]%> </button><br><br></td>
+          <td id="<%=poll.options[i]%>-votes"> <%= votes[poll.options[i]]%> </td>
+        <% } %>
+      </tr>
+    <% } %>
+
+<a href="#" id="close-poll">Close Poll</a>
+
+  <h3>Results</h3>
+    <div id='vote-count'></div>
+</div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/client.js"></script>
+</html>

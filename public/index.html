@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+  <link href="/css/application.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Poiret+One|Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+
+  <title>Steve Time</title>
+</head>
+
+<body>
+<div class="background-image">
+<div class="container">
+  <br><br>
+  <div class="jumbotron">
+    <h1>Steve Time</h1>
+    <p>An application to make sure students are doing the thing and doing it well and not just job searching (cough cough)!</p>
+  </div>
+
+  <div class="container">
+  <form action="/poll" method="post">
+    <div class="poll-form">
+      <label><h5>Please enter poll name.</h5></label><br>
+      <input type="text" name="poll[title]" class="form-control"><br><br>
+
+      <label><h5>Please choose a poll password or enter your existing password if you are a returning user.</h5></label><br>
+      <input type="password-field" name="poll[adminId]" class="form-control"><br><br>
+
+      <label><h5>Enter up to four options.</h5></label><br>
+      <input type="text" name="poll[options]" class="form-control"><br>
+      <input type="text" name="poll[options]" class="form-control"><br>
+      <input type="text" name="poll[options]" class="form-control"><br>
+      <input type="text" name="poll[options]" class="form-control"><br><br>
+
+      <input id="submit" type="submit" class="btn btn-default"></input>
+    </div>
+  </div>
+</form>
+</div>
+</div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/client.js"></script>
+  </body>
+</html>

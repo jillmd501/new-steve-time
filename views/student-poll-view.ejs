@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+    <link href="/css/application.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Poiret+One|Pacifico' rel='stylesheet' type='text/css'>
+
+
+    <title>Steve Time</title>
+  </head>
+<div class='container'>
+
+<h3 class="center">Make Steve Proud! 💁👊🐩</h3>
+
+
+<table class="centered">
+  <thead>
+    <tr>
+      <th>Option</th>
+      <th>Count</th>
+    </tr>
+  </thead>
+  <tbody id="choices">
+    <h1 style='color: blue'><%= poll.title %></h1>
+      <br>
+      <% for(var i=0; i < poll.options.length; i++){ %>
+        <tr>
+          <% if(poll.options[i] != ""){ %>
+            <td><button class="btn btn-primary btn-lg vote-button"> <%=poll.options[i]%> </button><br><br></td>
+            <td id="<%=poll.options[i]%>-votes"> <%= votes[poll.options[i]]%> </td>
+          <% } %>
+        </tr>
+      <% } %>
+  </tbody>
+</table>
+
+</div>
+
+</html>
