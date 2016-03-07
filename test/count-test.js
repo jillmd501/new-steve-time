@@ -13,4 +13,9 @@ describe('count-votes', function(){
     var expectedResult = {'jill': 2, 'joe': 2}
     expect(countVotes(poll)).to.deep.equal(expectedResult)
   });
+  
+  it('will not tally multiple votes', function(){
+    var expectedResult = {'jill': 2, 'joe': 2}
+    expect(countVotes(poll)).to.deep.equal(expectedResult)
+  });
 });
