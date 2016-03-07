@@ -37,19 +37,9 @@ app.post('/poll', function(req, res){
 });
 
 app.get('/polls/:id', function(req, res){
-  var poll = app.locals.polls[req.params.id];
-  res.render('admin-poll-view', {poll: poll, votes: countVotes(poll)});
+  var poll = polls[req.params.id];
+  res.render('student-poll-view', {poll: poll, votes: countVotes(poll)});
 });
-
-app.get('/polls/admin/:adminId', function(req, res){
-  var pollList = [];
-  var keys = Object.keys(app.locals.polls)
-  for (var i = 0; i < keys.length; i++){
-    var poll = app.locals.polls[keys[i]];
-    if(poll['adminId'] === req.params.adminId){ pollList.push(poll)}
-  }
-  res.render('steve-admin-view', {polls: pollList});
-})
 
 app.get('/polls/:id/:adminId', function(req, res){
   var poll = polls[req.params.id];
