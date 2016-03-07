@@ -1,6 +1,7 @@
 var expect = require('chai').expect;
 var request = require('supertest');
 var app = require('../server');
+const fixtures = require('./fixtures');
 
 describe('GET /', function(){
   it('responds with success', function(done){

@@ -13,9 +13,16 @@ describe('count-votes', function(){
     var expectedResult = {'jill': 2, 'joe': 2}
     expect(countVotes(poll)).to.deep.equal(expectedResult)
   });
-  
+
+  var poll = { title: 'hi',
+  adminId: 'hi',
+  options: [ 'hi', 'jill', 'joe', '' ],
+  id: '38674e20c9f11aa33add',
+  votes: { '/#pSAkW4kqQ-229WkoAAAC': 'jill','/#pAkW4kqQ-229WkoAAAC': 'jill', '/#pSAkW4kqQ-229WkoAAAD': 'joe', '/#pSAkW4kqQ-229WkoAAAD': 'joe' } }
+
+
   it('will not tally multiple votes', function(){
-    var expectedResult = {'jill': 2, 'joe': 2}
+    var expectedResult = {'jill': 2, 'joe': 1}
     expect(countVotes(poll)).to.deep.equal(expectedResult)
   });
 });
